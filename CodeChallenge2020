@@ -1,0 +1,36 @@
+import random
+n=int(input("Input:-"))
+list1 = ['Dog','Goat','Cat','Horse','Elephant']
+list_of_no =[]
+while len(list_of_no) != n:
+ for i in range(0,n):
+   number =random.randint(1,n)
+   if number not in list_of_no:
+       list_of_no.append(number)
+for z in range(0,n):
+    print(list_of_no[z])
+for x in range(0,5):
+   print(list1[x])
+length=[]
+for j in range(0,5):
+    length.append(len(list1[j]))
+for position in range(0,5):
+    if length[position]==list_of_no[position]:
+        current_string=list1[position]
+        if list1.index(current_string) ==list_of_no[position]:
+            list1[position] = list1[position]
+            list1[position] = list1[position].capitalize()
+
+        else:
+            list1[position]=list1[position].upper()
+    else:
+        list1[position] = list1[position].lower()
+
+print("output:-")
+list2 =['a','b','c','d','e']
+
+for v in range(0,5):
+    list2[list_of_no[v]-1] = list1[v]
+
+for k in range(0,5):
+    print(list2[k])
